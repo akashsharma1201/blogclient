@@ -1,0 +1,87 @@
+.post-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 40px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 10px;
+}
+
+.post-wrapper .post-image-wrapper {
+  width: 40%;
+  height: 70%;
+}
+
+.auther,
+.date {
+  color: #000;
+  font-weight: bold;
+  font-family: "Lato";
+  font-size: 0.9rem;
+  /* margin-bottom: 10px; */
+}
+.date {
+  float: right;
+}
+
+.post-wrapper .post-text-wrapper {
+  width: 60%;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+  /* align-self: center; */
+  width: 50%;
+}
+
+.post-wrapper .post-text-wrapper a {
+  text-decoration: none;
+}
+
+.post-wrapper .post-text-wrapper a:hover {
+  text-decoration: solid;
+}
+.post-wrapper .post-text-wrapper a > h2 {
+  color: #000;
+  font-family: "Poppins";
+}
+
+.post-wrapper .post-text-wrapper p {
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.post-wrapper .update-delete-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post-wrapper .update-delete-btns .update ,.delete{
+  padding: 8px 16px;
+  border-radius: 30px;
+  background-color: #000;
+  color: aliceblue;
+  border: none;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.post-wrapper .update-delete-btns .update {
+  color: #000;
+  background-color: #fff;
+}
+
+.post-wrapper .update-delete-btns .update {
+  color: #ffffff;
+  background-color: #cd2b2b;
+}
+
+
+

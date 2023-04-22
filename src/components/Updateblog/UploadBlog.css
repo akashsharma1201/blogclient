@@ -1,0 +1,27 @@
+.bost-form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  
+  .bost-form-wrapper form input {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #535353;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  .bost-form-wrapper form button {
+    border: none;
+    background-color: #292929;
+    color: #fff;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 0.8;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
