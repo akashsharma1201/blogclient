@@ -1,1 +1,1 @@
-export const baseUrl ="https://doctorserverapp.vercel.app/"
+export const baseUrl ="https://blogserver-beta.vercel.app/"
