@@ -3,6 +3,7 @@ import "./Post.css";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { baseUrl } from '../../baseUrl';
 
 const Post = () => {
 
@@ -11,7 +12,7 @@ const Post = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios('http://localhost:5000/app/api/blog/allblog'); // Replace with your API endpoint
+            const response = await axios(`${baseUrl}/app/api/blog/allblog`); // Replace with your API endpoint
             console.log(response.data.blogs);
             setPosts(response.data.blogs);
         } catch (error) {
@@ -30,9 +31,8 @@ const Post = () => {
             headers: { Authorization: `Bearer ${token}` },
             'Content-Type': 'application/json'
         };
-        console.log(token);
         try {
-            const response = await axios.delete(`http://localhost:5000/app/api/blog/deleteblog/${id}`, config
+            const response = await axios.delete(`${baseUrl}/app/api/blog/deleteblog/${id}`, config
             )
             toast.error(response.data, {
                 position: toast.POSITION.TOP_CENTER
@@ -55,7 +55,7 @@ const Post = () => {
                 return (
                     <div className='post-wrapper' key={index}>
                         <div className='post-image-wrapper'>
-                            <img src={"http://localhost:5000/" + post?.image} className='img-fluid' />
+                            <img src={`${baseUrl}` + post?.image} className='img-fluid' />
                         </div>
                         <div className='post-text-wrapper'>
                             <Link to={`blogdeatil/${post._id}`}> <h2>{post?.title}</h2></Link>

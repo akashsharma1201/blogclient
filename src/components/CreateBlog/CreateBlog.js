@@ -6,6 +6,7 @@ import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { baseUrl } from '../../baseUrl';
 
 const CreatePost = () => {
 
@@ -37,7 +38,7 @@ const CreatePost = () => {
         console.log(content);
 
         try {
-            const response = await axios.post("http://localhost:5000/app/api/blog/createblog/", formdata)
+            const response = await axios.post(`${baseUrl}/app/api/blog/createblog/`, formdata)
             console.log(response.data);
            
             toast.success(response.data.message, {

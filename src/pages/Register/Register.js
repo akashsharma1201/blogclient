@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { baseUrl } from '../../baseUrl';
 
 const Register = () => {
 
@@ -22,7 +23,7 @@ const Register = () => {
         if (name && email && password && rePassword) {
             if (password == rePassword) {
                 try {
-                    const response = await axios.post("http://localhost:5000/app/api/user/register", newUser)
+                    const response = await axios.post(`${baseUrl}/app/api/user/register`, newUser)
 
                     const { message, user, token, success } = response.data
                     console.log(message, user, token, success);

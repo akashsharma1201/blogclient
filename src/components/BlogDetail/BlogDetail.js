@@ -3,6 +3,7 @@ import "./BlogDetail.css"
 import Navbar from '../Navbar/Navbar';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { baseUrl } from '../../baseUrl';
 
 const BlogDetail = () => {
   const {id} = useParams();
@@ -12,7 +13,7 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await axios(`http://localhost:5000/app/api/blog/getblog/${id}`); // Replace with your API endpoint
+            const response = await axios(`${baseUrl}/app/api/blog/getblog/${id}`); // Replace with your API endpoint
             console.log(response.data.blogs);
             setBLog(response.data.blogs);
             // setPosts(jsonData);

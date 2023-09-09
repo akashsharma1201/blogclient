@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import "./UploadBlog.css"
 import { ToastContainer, toast } from 'react-toastify';
+import { baseUrl } from '../../baseUrl';
 
 const UpdateBlog = () => {
 
@@ -25,7 +26,7 @@ const UpdateBlog = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios(`http://localhost:5000/app/api/blog/getblog/${id}`); // Replace with your API endpoint
+                const response = await axios(`${baseUrl}/app/api/blog/getblog/${id}`); // Replace with your API endpoint
                 console.log(response.data.blogs);
                 setBLog(response.data.blogs);
                 // setPosts(jsonData);
@@ -61,9 +62,9 @@ const UpdateBlog = () => {
             'Content-Type': 'application/json'
         };
         try {
-            const response = await axios.put(`http://localhost:5000/app/api/blog/updateblog/${id}`, data ,config)
+            const response = await axios.put(`http://localhost:5000/app/api/blog/updateblog/${id}`, data, config)
             console.log(response.data);
-            toast.success(response.data.message,{
+            toast.success(response.data.message, {
                 position: toast.POSITION.TOP_CENTER
             })
         } catch (error) {

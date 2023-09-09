@@ -7,6 +7,7 @@ import axios from 'axios';
 // import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { baseUrl } from '../../baseUrl';
 
 
 const Login = () => {
@@ -17,7 +18,7 @@ const Login = () => {
     const formValidation = async () => {
         if (email && password) {
             try {
-                const response = await axios.post("http://localhost:5000/app/api/user/login", logincredential)
+                const response = await axios.post(`${baseUrl}/app/api/user/login`, logincredential)
                 const { message, user, token, success } = response.data
                 toast.success(message, {
                     position: toast.POSITION.TOP_CENTER
